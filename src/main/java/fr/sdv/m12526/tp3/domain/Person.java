@@ -1,6 +1,7 @@
 package fr.sdv.m12526.tp3.domain;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.util.LinkedHashSet;
@@ -9,6 +10,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "person", schema = "bestioles")
+@Data
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,9 +1,11 @@
 package fr.sdv.m12526.tp3.domain;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "species", schema = "bestioles")
+@Data
 public class Species {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
