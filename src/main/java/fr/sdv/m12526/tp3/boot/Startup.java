@@ -31,6 +31,5 @@ public class Startup implements CommandLineRunner {
             roleRepository.findAll().forEach(System.out::println);
             speciesRepository.findAll().forEach(System.out::println);
             animalRepository.findAll().forEach(System.out::println);
-
     }
 }
