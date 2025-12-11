@@ -68,5 +68,37 @@ public class Startup implements CommandLineRunner {
             System.out.println(animal);
         }
 
+        //tp5
+
+        //Species
+        List<Species> species1 = speciesRepository.findAllOrderByCommonName();
+        for(Species species2 : species1) {
+            System.out.println(species2);
+        }
+
+        List<Species> species2 = speciesRepository.findAllByCommonNameLike("%Ch%");
+        for(Species species3 : species2) {
+            System.out.println(species3);
+        }
+
+        //Person
+        List<Person> personList = personRepository.findByAgeBetween(39,80);
+        for (Person person : personList) {
+            System.out.println(person);
+        }
+        Animal animal = animalRepository.getOne(1);
+        List<Person>  personList1 = personRepository.findByAnimalsContains(animal);
+        for (Person person1 : personList1) {
+            System.out.println(person1);
+        }
+
+        //Animal
+        System.out.println(animalRepository.countAnimalsBySex("F"));
+
+        System.out.println(animalRepository.findAnimalsByPersonId(2));
+
+
+
+
     }
 }
