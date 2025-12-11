@@ -68,6 +68,5 @@ public class Startup implements CommandLineRunner {
             System.out.println(animal);
         }
 
-
     }
 }
