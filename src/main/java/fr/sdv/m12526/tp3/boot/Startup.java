@@ -10,6 +10,7 @@ import fr.sdv.m12526.tp3.repositories.SpeciesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -97,8 +98,17 @@ public class Startup implements CommandLineRunner {
 
         System.out.println(animalRepository.findAnimalsByPersonId(2));
 
+        personRepository.findAll().forEach(System.out::println);
+        personRepository.createManyPeople(3);
+        personRepository.findAll().forEach(System.out::println);
 
+        tp6();
 
+    }
+    @Transactional
+    public void tp6(){
+        personRepository.findAll().forEach(System.out::println);
+        personRepository.deletePeopleWithoutAnimals();
 
     }
 }
